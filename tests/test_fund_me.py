@@ -8,7 +8,7 @@ from scripts.helpful_scripts import get_account, LOCAL_BLOCKCHAIN_ENVIRONMENTS
 def test_can_fund_and_withdraw():
     account = get_account()
     fund_me = deploy_fund_me()
-    entrance_fee = fund_me.getEntranceFee()
+    entrance_fee = fund_me.getEntranceFee() + 1000
     print('the entrance fee is', entrance_fee)
     tx = fund_me.fund({'from': account, 'value': entrance_fee})
     tx.wait(1)
